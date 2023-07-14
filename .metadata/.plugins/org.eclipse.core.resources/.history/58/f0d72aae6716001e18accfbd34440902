@@ -1,0 +1,51 @@
+package poi;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class WriteData
+{
+
+	public static void main(String[] args) throws IOException 
+	{
+		FileInputStream file=new FileInputStream("C:\\Automation\\data files");
+		
+		XSSFWorkbook w=new XSSFWorkbook(file);
+		
+		XSSFSheet s=w.createSheet("WriteData");
+		
+		s.createRow(0).createCell(0).setCellValue("Squad Infotech");
+		s.createRow(1).createCell(1).setCellValue("Andheri 400019");
+		
+		FileOutputStream out=new FileOutputStream("C:\\Automation\\data files");
+		w.write(out);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}
